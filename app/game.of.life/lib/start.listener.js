@@ -1,7 +1,5 @@
-var require = require || function() {};
-var $ = $ || require('jquery');
-
-function Starter() {  
+function Starter($) {  
+    this.page = $;
 };
 
 Starter.prototype.start = function() {

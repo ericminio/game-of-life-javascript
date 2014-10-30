@@ -1,11 +1,9 @@
-var require = require || function() {};
-var $ = $ || require('jquery');
-
-function Toggler() {  
+function Toggler($) {  
+    this.page = $;
 };
 
 Toggler.prototype.toggle = function(id) {
-    var cell = $('#' + id);
+    var cell = this.page('#' + id);
     if (cell.attr('class') === 'alive' ) {
         cell.attr('class', 'empty');
     }

@@ -1,5 +1,5 @@
 {
-  "name": "Game of life simulator",
+  "name": "game-of-life-simulator",
   "version": "0.0.1",
   "devDependencies": {
     "jquery": "1.8.3",

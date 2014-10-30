@@ -44,7 +44,7 @@ describe('Simulator html', function() {
             });
         
             it('and toggling on click', function() {
-                expect(page(cell).attr('onclick')).toContain("new Toggler().toggle(this.id)");
+                expect(page(cell).attr('onclick')).toContain("new Toggler($).toggle(this.id)");
             });
             
         });
@@ -57,7 +57,7 @@ describe('Simulator html', function() {
     	});
         
         it('and starting simulation on click', function() {
-            expect(page('button#start').attr('onclick')).toContain('new Starter().start()');
+            expect(page('button#start').attr('onclick')).toContain('new Starter($).start()');
         });
     });
     

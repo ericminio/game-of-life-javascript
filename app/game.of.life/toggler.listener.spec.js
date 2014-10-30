@@ -3,7 +3,7 @@ var Toggler = require('./lib/toggler.listener');
 
 describe('Toggler listener', function() {
 
-    var listener = new Toggler();
+    var listener = new Toggler($);
 
     it('can be instantiated', function() {
         expect(listener).toBeDefined();
