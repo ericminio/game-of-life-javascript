@@ -4,21 +4,18 @@ function MotherNature() {
 MotherNature.prototype.after = function(cells) {
     
     var ofsprings = [];
+
     for (var row = 0 ; row < cells.length; row ++) {
         var line = [];
         for (var column = 0 ; column < cells[0].length; column ++) {
-            line.push(false);
+            var next = false;
+            if (this.aliveAt(row, column, cells) && 
+                [2, 3].indexOf(this.neighbourCountOf(row, column, cells)) != -1) {
+                next = true;
+            }
+            line.push(next);
         }
         ofsprings.push(line);
-    }
-
-    for (var row = 0 ; row < cells.length; row ++) {
-        for (var column = 0 ; column < cells[0].length; column ++) {
-            if (this.aliveAt(row, column, cells) && 
-                this.neighbourCountOf(row, column, cells) == 2) {
-                ofsprings[row][column] = true
-            }    
-        }
     }
         
     return ofsprings;

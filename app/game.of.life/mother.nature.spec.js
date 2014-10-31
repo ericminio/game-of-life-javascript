@@ -4,10 +4,6 @@ describe('Game of life kata', function() {
 
     var motherNature = new MotherNature();
 
-    it('can be instantiated', function() {
-        expect(motherNature).toBeDefined();
-    });
-    
     it('scattered cells die', function() {
         var cells = [
             [true , false, false],
@@ -47,6 +43,17 @@ describe('Game of life kata', function() {
 
             expect(motherNature.after([
                 [false, false, true],
+                [false, true,  false],
+                [true,  false, false]
+                ])[1][1]).toEqual(true);
+        });
+    });
+    
+    describe('a cell with 3 neighbours survives:', function() {
+        
+        it('works with different directions', function() {
+            expect(motherNature.after([
+                [true,  false, true],
                 [false, true,  false],
                 [true,  false, false]
                 ])[1][1]).toEqual(true);
