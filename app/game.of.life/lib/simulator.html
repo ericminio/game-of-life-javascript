@@ -15,6 +15,7 @@
         <script src="game.of.life/lib/toggler.listener.js"></script>
         <script src="game.of.life/lib/start.listener.js"></script>        		
         <script src="game.of.life/lib/mother.nature.js"></script>        		
+        <script src="game.of.life/lib/grid.creator.js"></script>        		
                 
 	</head>
 
@@ -23,16 +24,15 @@
         <br/>
         
         <table id="grid" border="1">
-            <tr><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-1x1"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-1x2"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-1x3"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-1x4"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-1x5"/></tr>
-            <tr><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-2x1"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-2x2"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-2x3"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-2x4"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-2x5"/></tr>
-            <tr><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-3x1"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-3x2"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-3x3"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-3x4"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-3x5"/></tr>
-            <tr><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-4x1"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-4x2"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-4x3"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-4x4"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-4x5"/></tr>
-            <tr><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-5x1"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-5x2"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-5x3"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-5x4"/><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-5x5"/></tr>
+            <tr><td onclick="new Toggler($).toggle(this.id)" class="empty" id="cell-template"/></tr>
         </table>
         
         <br/>
 		<button id="start" class="btn btn-primary" onclick="new Starter($, new MotherNature()).start()">Start</button>
 				
+        <script>
+            new GridCreator($).createGridOfSize(10);
+        </script>
 	</body>
 	
 </html>

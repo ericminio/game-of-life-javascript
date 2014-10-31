@@ -27,17 +27,13 @@ describe('Simulator html', function() {
             expect(page).toHaveElement('table#grid');
         });
         
-        it('with 5x5 cells', function() {
-            for(var row=1; row<= 5; row++) {
-                for(var column=1; column <= 5; column++) {
-                    expect(page).toHaveElement('#cell-'+row+'x'+column);
-                }
-            }
+        it('with a cell template', function() {
+            expect(page).toHaveElement('table#grid > tr > td#cell-template'); 
         });
         
-        describe('with each cell', function() {
+        describe('with cell template', function() {
             
-            var cell = '#cell-3x4';
+            var cell = '#cell-template';
         
             it('being empty by default', function() {
                 expect(page(cell).attr('class')).toContain('empty');
