@@ -13,6 +13,10 @@ MotherNature.prototype.after = function(cells) {
                 [2, 3].indexOf(this.neighbourCountOf(row, column, cells)) != -1) {
                 next = true;
             }
+            if (!this.aliveAt(row, column, cells) && 
+                [3].indexOf(this.neighbourCountOf(row, column, cells)) != -1) {
+                next = true;
+            }
             line.push(next);
         }
         ofsprings.push(line);

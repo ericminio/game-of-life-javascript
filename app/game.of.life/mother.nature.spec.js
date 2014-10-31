@@ -53,10 +53,33 @@ describe('Game of life kata', function() {
         
         it('works with different directions', function() {
             expect(motherNature.after([
-                [true,  false, true],
+                [true,  false, true ],
                 [false, true,  false],
                 [true,  false, false]
                 ])[1][1]).toEqual(true);
         });
     });
+
+    describe('an empty slot with 3 neighbours comes to life:', function() {
+        
+        it('works with different directions', function() {
+            expect(motherNature.after([
+                [true,  false, true ],
+                [false, false, false],
+                [true,  false, false]
+                ])[1][1]).toEqual(true);
+        });
+    });
+
+    describe('a cell with more than 3 neighbours dies:', function() {
+        
+        it('works with different directions', function() {
+            expect(motherNature.after([
+                [true,  false, true ],
+                [false, true,  false],
+                [true,  false, true ]
+                ])[1][1]).toEqual(false);
+        });
+    });
+
 });
