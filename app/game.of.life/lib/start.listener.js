@@ -8,10 +8,8 @@ Starter.prototype.start = function() {
     
     for(var row=0; row< ofsprings.length; row++) {
         for(var column=0; column < ofsprings[0].length; column++) {
-            this.page('#cell-'+(row+1)+'x'+(column+1)).attr('class', 'empty');
-            if(ofsprings[row][column] === true) {
-                this.page('#cell-'+(row+1)+'x'+(column+1)).attr('class', 'alive');
-            }
+            this.page('#cell-'+ (row+1) +'x'+ (column+1) )
+                .attr('class', ofsprings[row][column] ? 'alive' : 'empty');
         }
     }
 };
