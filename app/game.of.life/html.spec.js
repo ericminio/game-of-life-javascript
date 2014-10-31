@@ -57,7 +57,7 @@ describe('Simulator html', function() {
     	});
         
         it('and starting simulation on click', function() {
-            expect(page('button#start').attr('onclick')).toContain('new Starter($).start()');
+            expect(page('button#start').attr('onclick')).toContain('new Starter($, new MotherNature()).start()');
         });
     });
     

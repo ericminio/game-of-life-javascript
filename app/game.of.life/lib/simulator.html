@@ -14,6 +14,7 @@
         
         <script src="game.of.life/lib/toggler.listener.js"></script>
         <script src="game.of.life/lib/start.listener.js"></script>        		
+        <script src="game.of.life/lib/mother.nature.js"></script>        		
                 
 	</head>
 
@@ -30,7 +31,7 @@
         </table>
         
         <br/>
-		<button id="start" class="btn btn-primary" onclick="new Starter($).start()">Start</button>
+		<button id="start" class="btn btn-primary" onclick="new Starter($, new MotherNature()).start()">Start</button>
 				
 	</body>
 	
