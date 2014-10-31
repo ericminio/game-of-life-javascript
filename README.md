@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ericminio/game-of-life-javascript.svg?branch=master)](https://travis-ci.org/ericminio/game-of-life-javascript)
+
 ## Get ready
 
 Install [node.js](http://nodejs.org/) then run from the command line
