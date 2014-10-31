@@ -22,7 +22,7 @@ Tests should pass :)
 from your command line
 
 ```sh
-node app/lib/app.js
+npm start
 ```
 
 Open your browser and navigate to
