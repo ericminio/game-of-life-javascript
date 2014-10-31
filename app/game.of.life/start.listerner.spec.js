@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
 var Starter = require('./lib/start.listener');
 
 describe('Start listener', function() {

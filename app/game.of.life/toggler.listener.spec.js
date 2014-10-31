@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
 var Toggler = require('./lib/toggler.listener');
 
 describe('Toggler listener', function() {

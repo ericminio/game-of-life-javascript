@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
 var GridCreator = require('./lib/grid.creator');
 
 describe('Grid creator', function() {

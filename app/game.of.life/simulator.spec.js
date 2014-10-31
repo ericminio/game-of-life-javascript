@@ -5,6 +5,7 @@ var Browser = require('zombie');
 describe('Game of life simulator', function() {
 
     var server;
+    var browser = Browser.create();
     
     beforeEach(function(done) {
         server = new Server(router);
@@ -17,38 +18,30 @@ describe('Game of life simulator', function() {
     });
 
     it('offers a way to setup the grid', function(done) {
-        var browser = new Browser();
+        var cell = '#cell-1x1';
         browser.visit('http://localhost:5000/').
             then(function() {
-                return browser.click('#cell-1x1');
+                return browser.click(cell);
             }).
             then(function() {
-                expect(browser.query('#cell-1x1').className).toContain('alive');
-                done();
+                browser.assert.className(cell, 'alive');
             }).
-            fail(function(error) {
-            	expect(error.toString()).toBeNull();
-            	done();
-        	});
+            then(done, done);
     });
 
     it('offers a way to start the simulation for example with one cell that will not survive', function(done) {
-        var browser = new Browser();
+        var cell = '#cell-1x1';
         browser.visit('http://localhost:5000/').
             then(function() {
-                return browser.click('#cell-1x1');
+                return browser.click(cell);
             }).
             then(function(){
                 return browser.pressButton('#start');
             }).
             then(function() {
-                expect(browser.query('#cell-1x1').className).toContain('empty');
-                done();
+                browser.assert.className(cell, 'empty');
             }).
-            fail(function(error) {
-            	expect(error.toString()).toBeNull();
-            	done();
-        	});
+            then(done, done);
     });
     
 });
