@@ -11,6 +11,15 @@ MotherNature.prototype.after = function(cells) {
         }
         ofsprings.push(line);
     }
+
+    for (var row = 0 ; row < cells.length; row ++) {
+        for (var column = 0 ; column < cells[0].length; column ++) {
+            if ( cells[row][column-1] &&
+                 cells[row][column+1]) {
+                     ofsprings[row][column] = true
+                 }
+        }
+    }
         
     return ofsprings;
 };

@@ -20,5 +20,17 @@ describe('Game of life kata', function() {
                 expect( ofsprings[row][column] ).toEqual(false);
             }
         }
-    });  
+    });
+    
+    describe('a cell with 2 neighbourgs survives:', function() {
+        
+        it('works on one line', function() {
+            var cells = [
+                [true , true, true],
+            ];
+            var ofsprings = motherNature.after(cells);
+            
+            expect(ofsprings[0][1]).toEqual(true);
+        });
+    });
 });
