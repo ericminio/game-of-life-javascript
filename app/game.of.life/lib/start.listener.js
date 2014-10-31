@@ -15,10 +15,14 @@ Starter.prototype.start = function() {
 };
 
 Starter.prototype.currentGeneration = function() {
+    
+    var size = 0;
+    while( this.page('#cell-'+(size+1)+'x1').length != 0 ) {size ++;}
+    
     cells = [];
-    for(var row=1; row<= 5; row++) {
+    for(var row=1; row<= size; row++) {
         var line = [];
-        for(var column=1; column <= 5; column++) {
+        for(var column=1; column <= size; column++) {
             line.push((this.page('#cell-'+row+'x'+column).attr('class') === 'alive'));
         }
         cells.push(line);
