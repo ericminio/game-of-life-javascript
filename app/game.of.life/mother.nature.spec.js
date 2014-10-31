@@ -8,7 +8,7 @@ describe('Game of life kata', function() {
         expect(motherNature).toBeDefined();
     });
     
-    describe('scattered cells die', function() {
+    it('scattered cells die', function() {
         var cells = [
             [true , false, false],
             [false, false, true ]
@@ -22,7 +22,7 @@ describe('Game of life kata', function() {
         }
     });
     
-    describe('a cell with 2 neighbourgs survives:', function() {
+    describe('a cell with 2 neighbours survives:', function() {
         
         it('works on one line', function() {
             var cells = [
@@ -31,6 +31,25 @@ describe('Game of life kata', function() {
             var ofsprings = motherNature.after(cells);
             
             expect(ofsprings[0][1]).toEqual(true);
+        });
+        
+        it('works with other directions too', function() {
+            expect(motherNature.after([
+                [true], 
+                [true], 
+                [true]])[1][0]).toEqual(true); 
+            
+            expect(motherNature.after([
+                [true,  false, false],
+                [false, true,  false],
+                [false, false, true]
+                ])[1][1]).toEqual(true);
+
+            expect(motherNature.after([
+                [false, false, true],
+                [false, true,  false],
+                [true,  false, false]
+                ])[1][1]).toEqual(true);
         });
     });
 });
