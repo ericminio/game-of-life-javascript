@@ -1,11 +1,12 @@
-.empty {
+td {
     width: 50px;
     height: 50px;
-    background-color: white;
-};
+}
+
+.empty {
+    background-color: lightgreen;
+}
 
 .alive {
-    width: 50px;
-    height: 50px;
-    background-color: yellow;
-};
+    background-color: lightcoral;
+}

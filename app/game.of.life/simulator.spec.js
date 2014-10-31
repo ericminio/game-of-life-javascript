@@ -32,7 +32,7 @@ describe('Game of life simulator', function() {
         	});
     });
 
-    it('offers a way to start the simulation', function(done) {
+    it('offers a way to start the simulation for example with one cell that will not survive', function(done) {
         var browser = new Browser();
         browser.visit('http://localhost:5000/').
             then(function() {
